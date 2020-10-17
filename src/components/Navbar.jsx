@@ -70,7 +70,11 @@ function Navbar() {
     Setslider({ ...slider, [toggler]: open });
   };
   const sideList = (slider) => (
-    <Box component="div" className={classes.menuSlide}>
+    <Box
+      component="div"
+      className={classes.menuSlide}
+      onClick={toggleSlide(slider, false)}
+    >
       <Avatar className={classes.myImage} src={myImage} alt="Sakil Khan" />
       <Divider />
       <List>
