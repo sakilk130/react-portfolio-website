@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Home from './components/Home';
+import Index from './components/index';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
   return (
     <CssBaseline>
-      <Home />
+      <Index />
     </CssBaseline>
   );
 }
