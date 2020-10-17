@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   menuSlide: {
     width: 250,
     background: '#7B241C ',
-    height: '30rem',
+    height: '100%',
   },
   myImage: {
     display: 'block',
@@ -97,7 +97,13 @@ function Navbar() {
               <ClearAllIcon style={{ background: '#E74C3C' }} />
             </IconButton>
             <Typography variant="h5">Sakil Khan</Typography>
-            <SliderOpen open={slider.right}>{sideList('right')}</SliderOpen>
+            <SliderOpen
+              anchor="left"
+              open={slider.right}
+              onClose={toggleSlide('right', false)}
+            >
+              {sideList('right')}
+            </SliderOpen>
           </Toolbar>
         </AppBar>
       </Box>
