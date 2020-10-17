@@ -28,7 +28,7 @@ import SliderOpen from '@material-ui/core/Drawer';
 const useStyles = makeStyles((theme) => ({
   menuSlide: {
     width: 250,
-    background: '#7B241C ',
+    background: 'rgb(119, 23, 23) 76%',
     height: '100%',
   },
   myImage: {
@@ -37,8 +37,11 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(14),
     height: theme.spacing(14),
   },
-  listItem: {
-    color: '#EC7063',
+  listText: {
+    color: '#EAECEE',
+  },
+  listIcon: {
+    color: 'tan',
   },
 }));
 
@@ -80,10 +83,10 @@ function Navbar() {
       <List>
         {menuItems.map((item, key) => (
           <ListItem button key={key}>
-            <ListItemIcon className={classes.listItem}>
+            <ListItemIcon className={classes.listIcon}>
               {item.listIcon}
             </ListItemIcon>
-            <ListItemText className={classes.listItem}>
+            <ListItemText className={classes.listText}>
               {item.listText}
             </ListItemText>
           </ListItem>

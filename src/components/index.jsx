@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // style
 const useStyles = makeStyles({
   Particles: {
-    position: 'absolute',
+    position: 'fixed',
   },
 });
 function Index() {
