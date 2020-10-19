@@ -7,3 +7,12 @@ html {
     rgba(2, 0, 36, 1) 100%
   );
 }
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 26%,
+    rgba(79, 4, 27, 1) 100%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
