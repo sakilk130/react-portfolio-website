@@ -23,6 +23,7 @@ import ClearAllIcon from '@material-ui/icons/ClearAll';
 import myImage from '../image/myImage.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import SliderOpen from '@material-ui/core/Drawer';
+import { Link } from 'react-router-dom';
 
 // CSS for sidebar and myImage
 const useStyles = makeStyles((theme) => ({
@@ -49,10 +50,12 @@ const menuItems = [
   {
     listIcon: <Home />,
     listText: 'Home',
+    listPath: '/',
   },
   {
     listIcon: <AssignmentInd />,
     listText: 'Resume',
+    listPath: '/resume',
   },
   {
     listIcon: <Apps />,
@@ -82,7 +85,7 @@ function Navbar() {
       <Divider />
       <List>
         {menuItems.map((item, key) => (
-          <ListItem button key={key}>
+          <ListItem button key={key} component={Link} to={item.listPath}>
             <ListItemIcon className={classes.listIcon}>
               {item.listIcon}
             </ListItemIcon>
