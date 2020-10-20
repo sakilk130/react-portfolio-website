@@ -2,7 +2,7 @@
 
 This is my portfolio website using React.
 
-Live Demo [here]().
+Live Demo [here](https://sakilkhan.netlify.app/).
 
 ## Instructions
 
@@ -29,3 +29,4 @@ $ npm start # or yarn start
 - Reactjs
 - React Hooks
 - Material-UI for design
+- React Router
