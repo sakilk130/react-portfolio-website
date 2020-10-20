@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import Index from './components/index';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Resume from './components/Resume';
 import { Route } from 'react-router-dom';
+import Index from './components/index';
+import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
+import Contacts from './components/Contacts';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/" component={Index} />
       <Route path="/resume" component={Resume} />
       <Route path="/portfolio" component={Portfolio} />
+      <Route path="/contacts" component={Contacts} />
     </>
   );
 }

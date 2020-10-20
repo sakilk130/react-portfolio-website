@@ -12,13 +12,7 @@ import {
   Box,
   ListItemIcon,
 } from '@material-ui/core';
-import {
-  AssignmentInd,
-  Home,
-  Apps,
-  ContactMail,
-  SentimentSatisfied,
-} from '@material-ui/icons';
+import { AssignmentInd, Home, Apps, ContactMail } from '@material-ui/icons';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
 import myImage from '../image/myImage.jpg';
 import { makeStyles } from '@material-ui/core/styles';
