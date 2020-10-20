@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 
 import project1 from '../image/todoAppReactWithFirebase.png';
 import project2 from '../image/reactWeatherApp.png';
+import project3 from '../image/portfolioUsingReact.png';
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -73,24 +74,37 @@ const useStyles = makeStyles((theme) => ({
 
 const projects = [
   {
+    image: project1,
     name: 'Todo App',
     description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
     consequatur magni quod nesciunt necessitatibus molestiae non
     eligendi, magnam est aliquam recusandae? Magnam soluta minus
     iste alias sunt veritatis nisi dolores!`,
-    image: project1,
+    tools: ['javascript', 'react', 'firebase'],
     live: 'https://react-firebase-todo-app-d37d1.web.app/',
     source: 'https://github.com/sakilk130/react-firebase-todo-app',
   },
   {
+    image: project2,
     name: 'Weather App',
     description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
     consequatur magni quod nesciunt necessitatibus molestiae non\
     eligendi, magnam est aliquam recusandae? Magnam soluta minus\
     iste alias sunt veritatis nisi dolores!`,
-    image: project2,
+    tools: ['javascript', 'react'],
     live: 'https://react-weather-app-v1.netlify.app/',
     source: 'https://github.com/sakilk130/react-weather-app',
+  },
+  {
+    image: project3,
+    name: 'My Portfolio Website',
+    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
+    consequatur magni quod nesciunt necessitatibus molestiae non\
+    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
+    iste alias sunt veritatis nisi dolores!`,
+    tools: ['javascript', 'react'],
+    live: 'https://sakilkhan.netlify.app/',
+    source: 'https://github.com/sakilk130/react-portfolio-website',
   },
 ];
 
@@ -127,6 +141,19 @@ const Portfolio = () => {
                     >
                       {project.description}
                     </Typography>
+
+                    {/* Tools */}
+                    {project.tools.map((tool, i) => (
+                      <Button
+                        variant="contained"
+                        size="small"
+                        style={{ marginRight: '5px' }}
+                        key={i}
+                      >
+                        {tool}
+                      </Button>
+                    ))}
+                    {/* end */}
                   </CardContent>
                 </CardActionArea>
                 <CardActions className={classes.button}>
@@ -152,6 +179,7 @@ const Portfolio = () => {
               </Card>
             </Grid>
           ))}
+          {/* end */}
         </Grid>
       </Box>
     </>
