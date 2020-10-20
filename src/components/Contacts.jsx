@@ -1,20 +1,40 @@
 import React from 'react';
 import Navbar from './Navbar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Typography, Box, Grid, Button, TextField } from '@material-ui/core';
-import SendIcon from '@material-ui/icons/Send';
+import Box from '@material-ui/core/Box';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+
+import Send from '@material-ui/icons/Send';
 
 const useStyles = makeStyles((theme) => ({
+  contactContainer: {
+    height: '100vh',
+  },
+  heading: {
+    color: 'tomato',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    marginBottom: '1rem',
+  },
   form: {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     position: 'absolute',
   },
+  input: {
+    color: '#fff',
+  },
   button: {
     marginTop: '1rem',
     color: 'tomato',
-    borderColor: 'tomato',
+    borderColor: 'tan',
+  },
+  field: {
+    margin: '1rem 0rem',
   },
 }));
 
@@ -34,62 +54,50 @@ const InputField = withStyles({
         borderColor: 'tan',
       },
       '&.Mui-focused fieldset': {
+        color: '#fff',
         borderColor: 'tan',
       },
     },
   },
 })(TextField);
 
-function Contacts() {
+const Contact = () => {
   const classes = useStyles();
   return (
     <>
       <Navbar />
-      <Box component="div">
+      <Box component="div" className={classes.contactContainer}>
         <Grid container justify="center">
           <Box component="form" className={classes.form}>
-            <Typography
-              variant="h5"
-              style={{
-                color: 'tomato',
-                textAlign: 'center',
-                textTransform: 'uppercase',
-              }}
-            >
-              Get In Touch
+            <Typography variant="h5" className={classes.heading}>
+              Get in touch
             </Typography>
             <InputField
               fullWidth={true}
               label="Name"
               variant="outlined"
-              inputProps={{ style: { color: 'white' } }}
-              margin="dense"
-              size="medium"
+              inputProps={{ className: classes.input }}
             />
-            <br />
             <InputField
               fullWidth={true}
               label="Email"
               variant="outlined"
-              inputProps={{ style: { color: 'white' } }}
-              margin="dense"
-              size="medium"
+              inputProps={{ className: classes.input }}
+              className={classes.field}
             />
-            <br />
             <InputField
               fullWidth={true}
-              label="Company Name"
+              label="Message"
               variant="outlined"
-              inputProps={{ style: { color: 'white' } }}
-              margin="dense"
-              size="medium"
+              multiline
+              rows={4}
+              inputProps={{ className: classes.input }}
             />
-            <br />
             <Button
-              className={classes.button}
               variant="outlined"
               fullWidth={true}
-              endIcon={<SendIcon />}
+              endIcon={<Send />}
+              className={classes.button}
             >
               Contact Me
             </Button>
@@ -98,6 +106,6 @@ function Contacts() {
       </Box>
     </>
   );
-}
+};
 
-export default Contacts;
+export default Contact;

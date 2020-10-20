@@ -1,17 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Box } from '@material-ui/core';
 import Navbar from './Navbar';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
-  mainContainer: {
-    background:
-      'linear-gradient(90deg,rgba(2, 0, 36, 1) 26%,rgba(79, 4, 27, 1) 100%,rgba(2, 0, 36, 1) 100%)',
-  },
   timeLine: {
     position: 'relative',
     padding: '1rem',
-    margin: '0 auto',
+    margin: 'o auto',
     '&:before': {
       content: "''",
       position: 'absolute',
@@ -57,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
       width: '44%',
       margin: '1rem',
       '&:nth-of-type(2n)': {
-        float: 'rigth',
+        float: 'right',
         margin: '1rem',
         borderColor: 'tan',
       },
@@ -73,10 +70,10 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '9.375rem',
     margin: '0 3rem 0 auto',
     fontSize: '1.8rem',
+    color: '#fff',
     background: 'tomato',
-    color: 'white',
     lineHeight: 1,
-    padding: '0.5rem 0 1rem',
+    padding: '0.5rem 1rem',
     '&:before': {
       display: 'none',
     },
@@ -98,9 +95,15 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
   },
   subHeading: {
-    color: 'white',
-    padding: '0',
+    color: '#fff',
+    padding: 0,
     textTransform: 'uppercase',
+  },
+  body1: {
+    color: 'tomato',
+  },
+  subtitle1: {
+    color: 'tan',
   },
 }));
 
@@ -109,11 +112,12 @@ const Resume = () => {
   return (
     <>
       <Navbar />
-      <Box component="header" className={classes.mainContainer}>
+      <Box component="header">
         <Typography variant="h4" align="center" className={classes.heading}>
-          Working Experiance
+          Working Experience
         </Typography>
         <Box component="div" className={classes.timeLine}>
+          {/* Experience--1*/}
           <Typography
             variant="h2"
             className={`${classes.timeLineYear} ${classes.timeLineItem}`}
@@ -131,22 +135,86 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: 'tomato' }}
+              className={classes.body1}
             >
-              Company Name
+              company name
             </Typography>
             <Typography
               variant="subtitle1"
               align="center"
-              style={{ color: 'tan' }}
+              className={classes.subtitle1}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
+              ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
+              Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
+              repudiandae, rerum necessitatibus nisi mollitia.
+            </Typography>
+          </Box>
+
+          {/* Experience--2*/}
+          <Typography
+            variant="h2"
+            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+          >
+            2019
+          </Typography>
+          <Box component="div" className={classes.timeLineItem}>
+            <Typography
+              variant="h5"
+              align="center"
+              className={classes.subHeading}
+            >
+              Lorem ipsum dolor sit amet consectetur.
+            </Typography>
+            <Typography
+              variant="body1"
+              align="center"
+              className={classes.body1}
+            >
+              company name
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align="center"
+              className={classes.subtitle1}
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
+              ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
+              Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
+              repudiandae, rerum necessitatibus nisi mollitia.
+            </Typography>
+          </Box>
+          {/* Experience--3*/}
+          <Typography
+            variant="h2"
+            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+          >
+            2018
+          </Typography>
+          <Box component="div" className={classes.timeLineItem}>
+            <Typography
+              variant="h5"
+              align="center"
+              className={classes.subHeading}
+            >
+              Fullstack Javascript
+            </Typography>
+            <Typography
+              variant="body1"
+              align="center"
+              className={classes.body1}
+            >
+              company name
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align="center"
+              className={classes.subtitle1}
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
+              ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
+              Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
+              repudiandae, rerum necessitatibus nisi mollitia.
             </Typography>
           </Box>
         </Box>
