@@ -3,6 +3,7 @@ import { Typography, Avatar, Grid, Box } from '@material-ui/core';
 import avatar from '../image/myImage.jpg';
 import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core/styles';
+import HomeContract from './HomeContract';
 
 //css style
 const useStyles = makeStyles((theme) => ({
@@ -52,6 +53,7 @@ const Header = () => {
           backSpeed={60}
           loop
         />
+        <HomeContract />
       </Typography>
     </Box>
   );

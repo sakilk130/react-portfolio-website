@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Typography, Box, Grid, Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import { GridOff } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   form: {
