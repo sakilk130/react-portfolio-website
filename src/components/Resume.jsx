@@ -107,6 +107,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Resumes
+const resumes = [
+  {
+    id: 1,
+    year: '2020',
+    role: 'Hello',
+    companyName: 'Company Name',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas ipsa, laudantium totam perferendis possimus voluptatibus tenetur. Quasi voluptatibus, nam vitae eaque ad, officia laboriosam repudiandae, rerum necessitatibus nisi mollitia.',
+  },
+  {
+    id: 2,
+    year: '2019',
+    role: 'Lorem ipsum dolor sit amet consectetur',
+    companyName: 'Company Name',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas ipsa, laudantium totam perferendis possimus voluptatibus tenetur. Quasi voluptatibus, nam vitae eaque ad, officia laboriosam repudiandae, rerum necessitatibus nisi mollitia.',
+  },
+];
+
 const Resume = () => {
   const classes = useStyles();
   return (
@@ -117,106 +137,42 @@ const Resume = () => {
           Working Experience
         </Typography>
         <Box component="div" className={classes.timeLine}>
-          {/* Experience--1*/}
-          <Typography
-            variant="h2"
-            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-          >
-            2020
-          </Typography>
-          <Box component="div" className={classes.timeLineItem}>
-            <Typography
-              variant="h5"
-              align="center"
-              className={classes.subHeading}
-            >
-              Lorem ipsum dolor
-            </Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              className={classes.body1}
-            >
-              company name
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              align="center"
-              className={classes.subtitle1}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-              ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-              Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-              repudiandae, rerum necessitatibus nisi mollitia.
-            </Typography>
-          </Box>
-
-          {/* Experience--2*/}
-          <Typography
-            variant="h2"
-            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-          >
-            2019
-          </Typography>
-          <Box component="div" className={classes.timeLineItem}>
-            <Typography
-              variant="h5"
-              align="center"
-              className={classes.subHeading}
-            >
-              Lorem ipsum dolor sit amet consectetur.
-            </Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              className={classes.body1}
-            >
-              company name
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              align="center"
-              className={classes.subtitle1}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-              ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-              Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-              repudiandae, rerum necessitatibus nisi mollitia.
-            </Typography>
-          </Box>
-          {/* Experience--3*/}
-          <Typography
-            variant="h2"
-            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-          >
-            2018
-          </Typography>
-          <Box component="div" className={classes.timeLineItem}>
-            <Typography
-              variant="h5"
-              align="center"
-              className={classes.subHeading}
-            >
-              Fullstack Javascript
-            </Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              className={classes.body1}
-            >
-              company name
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              align="center"
-              className={classes.subtitle1}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-              ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-              Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-              repudiandae, rerum necessitatibus nisi mollitia.
-            </Typography>
-          </Box>
+          {/* start */}
+          {resumes.map((resume, i) => (
+            <>
+              <Typography
+                variant="h2"
+                className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+                key={i}
+              >
+                {resume.year}
+              </Typography>
+              <Box component="div" className={classes.timeLineItem}>
+                <Typography
+                  variant="h5"
+                  align="center"
+                  className={classes.subHeading}
+                >
+                  {resume.role}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  align="center"
+                  className={classes.body1}
+                >
+                  {resume.companyName}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  align="center"
+                  className={classes.subtitle1}
+                >
+                  {resume.description}
+                </Typography>
+              </Box>
+            </>
+          ))}
+          {/* end */}
         </Box>
       </Box>
     </>
