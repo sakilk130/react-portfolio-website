@@ -49,7 +49,16 @@ function Contacts() {
       <Box component="div">
         <Grid container justify="center">
           <Box component="form" className={classes.form}>
-            <Typography variant="h5">Get In Touch</Typography>
+            <Typography
+              variant="h5"
+              style={{
+                color: 'tomato',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+              }}
+            >
+              Get In Touch
+            </Typography>
             <InputField
               fullWidth={true}
               label="Name"
