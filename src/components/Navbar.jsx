@@ -18,6 +18,7 @@ import myImage from '../image/myImage.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import SliderOpen from '@material-ui/core/Drawer';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 // CSS for sidebar and myImage
 const useStyles = makeStyles((theme) => ({
@@ -109,6 +110,7 @@ function Navbar() {
               onClose={toggleSlide('right', false)}
             >
               {sideList('right')}
+              <Footer />
             </SliderOpen>
           </Toolbar>
         </AppBar>
