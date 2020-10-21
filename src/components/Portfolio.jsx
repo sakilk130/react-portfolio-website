@@ -16,6 +16,11 @@ import project2 from '../image/reactWeatherApp.png';
 import project3 from '../image/portfolioUsingReact.png';
 
 const useStyles = makeStyles((theme) => ({
+  heading: {
+    color: 'tomato',
+    paddingTop: '1.5rem',
+    textTransform: 'uppercase',
+  },
   mainContainer: {
     height: '100%',
   },
@@ -30,45 +35,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'rgb(132 29 2 / 1)',
   },
   button: {
-    backgroundColor: 'tan',
-  },
-  liveButton: {
-    backgroundColor: '#44c767',
-    borderRadius: '28px',
-    border: '1px solid #18ab29',
-    display: 'inline-block',
-    cursor: 'pointer',
-    color: '#ffffff',
-    fontSize: '13px',
-    padding: '3px 8px',
-    textDecoration: 'none',
-    textShadow: '0px 1px 0px #2f6627',
-    '&:hover': {
-      backgroundColor: '#5cbf2a',
-    },
-    '&:active': {
-      position: 'relative',
-      top: '1px',
-    },
-  },
-  sourceButton: {
-    backgroundColor: '#7892c2',
-    borderRadius: '28px',
-    border: '1px solid #4e6096',
-    display: 'inline-block',
-    cursor: 'pointer',
-    color: '#ffffff',
-    fontSize: '13px',
-    padding: '3px 8px',
-    textDecoration: 'none',
-    textShadow: '0px 1px 0px #283966',
-    '&:hover': {
-      backgroundColor: '#476e9e',
-    },
-    '&:active': {
-      position: 'relative',
-      top: '1px',
-    },
+    backgroundColor: 'rgb(218 218 218)',
   },
 }));
 
@@ -76,10 +43,10 @@ const projects = [
   {
     image: project1,
     name: 'Todo App',
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
-    consequatur magni quod nesciunt necessitatibus molestiae non
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus
-    iste alias sunt veritatis nisi dolores!`,
+    description: `This is a simple Todo app. You can store your todo list. Also you can Add, Edit,\
+     Delete and View. As front end I used JavaScript library called 'React'. For designing I used\
+     'Material-UI'. And Realtime Database or Cloud Firestore I used 'Firebase'. That's why the app is \
+     so faster and robust.`,
     tools: ['javascript', 'react', 'firebase'],
     live: 'https://react-firebase-todo-app-d37d1.web.app/',
     source: 'https://github.com/sakilk130/react-firebase-todo-app',
@@ -87,10 +54,9 @@ const projects = [
   {
     image: project2,
     name: 'Weather App',
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    description: `This is a Weather app. Where you can search a city and see current weather temperature, \
+    wind speed etc. As front end I used JavaScript library called 'React'. I used 'OpenWeather' APIs For request \
+    data and  display data.`,
     tools: ['javascript', 'react'],
     live: 'https://react-weather-app-v1.netlify.app/',
     source: 'https://github.com/sakilk130/react-weather-app',
@@ -98,10 +64,9 @@ const projects = [
   {
     image: project3,
     name: 'My Portfolio Website',
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    description: `This is my Portfolio Website. Also this is a part of projects. Where people can see some information \
+    about me. There are 6 pages like Home, Resume, Portfolio, Contacts, Skills and Educations. For this project i \
+    used 'React' for front end and 'Material-UI'.`,
     tools: ['javascript', 'react'],
     live: 'https://sakilkhan.netlify.app/',
     source: 'https://github.com/sakilk130/react-portfolio-website',
@@ -114,6 +79,9 @@ const Portfolio = () => {
     <>
       <Navbar />
       <Box component="div" className={classes.mainContainer}>
+        <Typography variant="h4" align="center" className={classes.heading}>
+          Projects
+        </Typography>
         <Grid container justify="center">
           {/* Projects */}
           {projects.map((project, i) => (
@@ -146,8 +114,13 @@ const Portfolio = () => {
                     {project.tools.map((tool, i) => (
                       <Button
                         variant="contained"
+                        color="primary"
                         size="small"
-                        style={{ marginRight: '5px' }}
+                        style={{
+                          marginRight: '5px',
+                          height: '18px',
+                          background: 'rgb(95 176 71)',
+                        }}
                         key={i}
                       >
                         {tool}
@@ -158,18 +131,19 @@ const Portfolio = () => {
                 </CardActionArea>
                 <CardActions className={classes.button}>
                   <Button
+                    variant="contained"
                     size="small"
                     color="primary"
-                    className={classes.liveButton}
                     target="blank"
                     href={project.live}
                   >
                     Live Demo
                   </Button>
                   <Button
+                    variant="contained"
                     size="small"
-                    color="primary"
-                    className={classes.sourceButton}
+                    color="secondary"
+                    style={{ background: '#589084' }}
                     target="blank"
                     href={project.source}
                   >
