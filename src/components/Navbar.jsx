@@ -24,7 +24,8 @@ import Footer from './Footer';
 const useStyles = makeStyles((theme) => ({
   menuSlide: {
     width: 250,
-    background: 'rgb(119, 23, 23) 76%',
+    background:
+      'linear-gradient(90deg,rgba(2, 0, 36, 1) 26%,rgba(79, 4, 27, 1) 100%,rgba(2, 0, 36, 1) 100%)',
     height: '100%',
   },
   myImage: {
