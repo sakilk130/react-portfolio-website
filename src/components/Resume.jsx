@@ -112,18 +112,9 @@ const resumes = [
   {
     id: 1,
     year: '2020',
-    role: 'Hello',
-    companyName: 'Company Name',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas ipsa, laudantium totam perferendis possimus voluptatibus tenetur. Quasi voluptatibus, nam vitae eaque ad, officia laboriosam repudiandae, rerum necessitatibus nisi mollitia.',
-  },
-  {
-    id: 2,
-    year: '2019',
-    role: 'Lorem ipsum dolor sit amet consectetur',
-    companyName: 'Company Name',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas ipsa, laudantium totam perferendis possimus voluptatibus tenetur. Quasi voluptatibus, nam vitae eaque ad, officia laboriosam repudiandae, rerum necessitatibus nisi mollitia.',
+    role: 'No Experience 😔',
+    companyName: '',
+    description: '',
   },
 ];
 
@@ -138,15 +129,15 @@ const Resume = () => {
         </Typography>
         <Box component="div" className={classes.timeLine}>
           {/* start */}
-          {resumes.map((resume, i) => (
+          {resumes.map((resume) => (
             <>
               <Typography
                 variant="h2"
                 className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-                key={i}
               >
                 {resume.year}
               </Typography>
+
               <Box component="div" className={classes.timeLineItem}>
                 <Typography
                   variant="h5"
