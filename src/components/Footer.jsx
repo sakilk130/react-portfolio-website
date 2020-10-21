@@ -19,22 +19,40 @@ const useStyles = makeStyles({
     },
   },
 });
+// data
+const contracts = [
+  {
+    id: 1,
+    name: 'GitHub',
+    icon: GitHubIcon,
+    username: 'sakilk130',
+    link: 'https://github.com/sakilk130',
+  },
+  {
+    id: 2,
+    name: 'LinkedIn',
+    icon: LinkedInIcon,
+    username: 'sakil-khan-076926145',
+    link: 'https://www.linkedin.com/in/sakil-khan-076926145/',
+  },
+];
 
 function Footer() {
   const classes = useStyles();
   return (
     <>
       <BottomNavigation width="auto" style={{ background: '#222' }}>
-        <BottomNavigationAction
-          className={classes.root}
-          style={{ padding: 0 }}
-          icon={<GitHubIcon />}
-        />
-        <BottomNavigationAction
-          className={classes.root}
-          style={{ padding: 0 }}
-          icon={<LinkedInIcon />}
-        />
+        {contracts.map((contract) => (
+          <BottomNavigationAction
+            key={contract.id}
+            className={classes.root}
+            style={{ padding: 0 }}
+            icon={<contract.icon />}
+            target="blank"
+            href={contract.link}
+            title={contract.username}
+          />
+        ))}
       </BottomNavigation>
     </>
   );
