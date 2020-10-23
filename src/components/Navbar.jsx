@@ -21,6 +21,7 @@ import SliderOpen from '@material-ui/core/Drawer';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import BuildIcon from '@material-ui/icons/Build';
+import SchoolIcon from '@material-ui/icons/School';
 
 // CSS for sidebar and myImage
 const useStyles = makeStyles((theme) => ({
@@ -64,6 +65,11 @@ const menuItems = [
     listIcon: <BuildIcon />,
     listText: 'Skills',
     listPath: '/skills',
+  },
+  {
+    listIcon: <SchoolIcon />,
+    listText: 'Education',
+    listPath: '/education',
   },
   {
     listIcon: <ContactMail />,
