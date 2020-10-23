@@ -1,59 +1,35 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    '& .MuiBottomNavigationAction-root': {
-      MinWidth: 0,
-      maxWidth: 250,
-    },
-    '& .MuiSvgIcon-root': {
-      fill: 'tan',
-      '&:hover': {
-        fill: 'tomato',
-        fontSize: '1.8rem',
-      },
-    },
+    MinWidth: 0,
+    maxWidth: 250,
+  },
+  love: {
+    height: '1em',
+    width: '1em',
+    margin: '0px 0.05em 0px 0.1em',
+    verticalAlign: '-0.1em',
   },
 });
-// data
-const contracts = [
-  {
-    id: 1,
-    name: 'GitHub',
-    icon: GitHubIcon,
-    username: 'sakilk130',
-    link: 'https://github.com/sakilk130',
-  },
-  {
-    id: 2,
-    name: 'LinkedIn',
-    icon: LinkedInIcon,
-    username: 'sakil-khan-076926145',
-    link: 'https://www.linkedin.com/in/sakil-khan-076926145/',
-  },
-];
-
 function Footer() {
   const classes = useStyles();
   return (
     <>
-      <BottomNavigation width="auto" style={{ background: '#222' }}>
-        {contracts.map((contract) => (
-          <BottomNavigationAction
-            key={contract.id}
-            className={classes.root}
-            style={{ padding: 0 }}
-            icon={<contract.icon />}
-            target="blank"
-            href={contract.link}
-            title={contract.username}
+      <div width="auto" style={{ background: '#222' }}>
+        <Typography className={classes.root} style={{ color: 'tomato' }}>
+          Made with <span> </span>
+          <img
+            src="https://twemoji.maxcdn.com/2/72x72/2764.png"
+            alt="love"
+            className={classes.love}
           />
-        ))}
-      </BottomNavigation>
+          <span> </span>
+          by Sakil Khan
+        </Typography>
+      </div>
     </>
   );
 }
