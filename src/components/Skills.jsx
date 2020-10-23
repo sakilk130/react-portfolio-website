@@ -36,10 +36,11 @@ const useStyles = makeStyles({
     background: 'white',
     margin: '1.5rem auto',
     borderRadius: '0.5rem ',
-    padding: '0.5rem',
+    padding: '1.5rem',
   },
   languageView: {
     display: 'flex',
+    color: 'tomato',
   },
 });
 
@@ -62,29 +63,28 @@ const skills = [
     logo: 'https://seeklogo.com/images/C/css3-logo-F1923C8D0E-seeklogo.com.png',
   },
   {
-    title: 'Firebase',
-    logo: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg',
-  },
-  {
     title: 'TypeScript',
     logo:
       'https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg',
   },
-
   {
-    title: 'PHP',
-    logo: 'https://www.vectorlogo.zone/logos/php/php-icon.svg',
+    title: 'Firebase',
+    logo: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg',
   },
-
   {
     title: 'Bootstrap',
     logo:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png',
   },
-
   {
     title: 'ReactJS',
     logo: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg',
+  },
+  // msql
+  {
+    title: 'MySQL',
+    logo:
+      'https://seeklogo.com/images/M/mysql-logo-69B39F7D18-seeklogo.com.png',
   },
 
   {
@@ -97,32 +97,36 @@ const skills = [
     title: 'NodeJS',
     logo: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg',
   },
+  {
+    title: 'PHP',
+    logo: 'https://www.vectorlogo.zone/logos/php/php-icon.svg',
+  },
+  {
+    title: 'VS Code',
+    logo: 'https://cdn.worldvectorlogo.com/logos/visual-studio-code.svg',
+  },
+
+  {
+    title: 'ExpressJS',
+    logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg',
+  },
 
   {
     title: 'Git',
     logo: 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg',
   },
-
   {
-    title: 'GitHub',
-    logo: 'https://www.vectorlogo.zone/logos/github/github-icon.svg',
-  },
-  {
-    title: 'ExpressJS',
-    logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg',
-  },
-  {
-    title: 'VS Code',
-    logo: 'https://cdn.worldvectorlogo.com/logos/visual-studio-code.svg',
+    title: 'Linux',
+    logo:
+      'https://www.freepnglogos.com/uploads/linux-png/file-icons-flat-linux-svg-wikimedia-commons-6.png',
   },
   {
     title: 'npm',
     logo: 'https://www.vectorlogo.zone/logos/npmjs/npmjs-icon.svg',
   },
   {
-    title: 'Linux',
-    logo:
-      'https://www.freepnglogos.com/uploads/linux-png/file-icons-flat-linux-svg-wikimedia-commons-6.png',
+    title: 'GitHub',
+    logo: 'https://www.vectorlogo.zone/logos/github/github-icon.svg',
   },
 ];
 function Skills() {
