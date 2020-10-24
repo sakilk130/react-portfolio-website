@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-
+import axios from 'axios';
 import Send from '@material-ui/icons/Send';
 
 const useStyles = makeStyles((theme) => ({
@@ -63,6 +63,37 @@ const InputField = withStyles({
 
 const Contact = () => {
   const classes = useStyles();
+
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null,
+  });
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg },
+    });
+    if (ok) {
+      form.reset();
+    }
+  };
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setServerState({ submitting: true });
+    axios({
+      method: 'post',
+      url: 'https://formspree.io/f/xgepkqol',
+      data: new FormData(form),
+    })
+      .then((r) => {
+        handleServerResponse(true, 'Thanks!', form);
+      })
+      .catch((r) => {
+        handleServerResponse(false, r.response.data.error, form);
+      });
+  };
+
   return (
     <>
       <Navbar />
@@ -72,35 +103,48 @@ const Contact = () => {
             <Typography variant="h5" className={classes.heading}>
               Get in touch
             </Typography>
-            <InputField
-              fullWidth={true}
-              label="Name"
-              variant="outlined"
-              inputProps={{ className: classes.input }}
-            />
-            <InputField
-              fullWidth={true}
-              label="Email"
-              variant="outlined"
-              inputProps={{ className: classes.input }}
-              className={classes.field}
-            />
-            <InputField
-              fullWidth={true}
-              label="Message"
-              variant="outlined"
-              multiline
-              rows={4}
-              inputProps={{ className: classes.input }}
-            />
-            <Button
-              variant="outlined"
-              fullWidth={true}
-              endIcon={<Send />}
-              className={classes.button}
-            >
-              Contact Me
-            </Button>
+            <form onSubmit={handleOnSubmit}>
+              <InputField
+                fullWidth={true}
+                label="Name"
+                variant="outlined"
+                name="name"
+                inputProps={{ className: classes.input }}
+              />
+              <InputField
+                fullWidth={true}
+                label="Email"
+                variant="outlined"
+                name="email"
+                inputProps={{ className: classes.input }}
+                className={classes.field}
+              />
+              <InputField
+                fullWidth={true}
+                label="Message"
+                variant="outlined"
+                name="message"
+                multiline
+                rows={4}
+                inputProps={{ className: classes.input }}
+              />
+
+              <Button
+                type="submit"
+                variant="outlined"
+                fullWidth={true}
+                endIcon={<Send />}
+                className={classes.button}
+              >
+                Contact Me
+              </Button>
+
+              {serverState.status && (
+                <p className={!serverState.status.ok ? 'errorMsg' : ''}>
+                  {serverState.status.msg}
+                </p>
+              )}
+            </form>
           </Box>
         </Grid>
       </Box>

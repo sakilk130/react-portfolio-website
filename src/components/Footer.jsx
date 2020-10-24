@@ -20,7 +20,7 @@ function Footer() {
     <>
       <div width="auto" style={{ background: '#222' }}>
         <Typography className={classes.root} style={{ color: 'tomato' }}>
-          Made by <span> </span>
+          Made with <span> </span>
           <img
             src="https://twemoji.maxcdn.com/2/72x72/2764.png"
             alt="love"
