@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import Send from '@material-ui/icons/Send';
-import Modal from 'react-modal';
+import Modal from '@material-ui/core/Modal';
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
@@ -37,18 +37,16 @@ const useStyles = makeStyles((theme) => ({
   field: {
     margin: '1rem 0rem',
   },
-
-  paper: {
+  modal: {
     display: 'flex',
-    justifyContent: 'start',
-    margin: '128px auto',
-    borderRadius: 10,
-    textAlign: 'center',
-    width: 400,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
     backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    outline: 'none',
   },
 }));
 
@@ -77,12 +75,20 @@ const InputField = withStyles({
 
 const Contact = () => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const [serverState, setServerState] = useState({
     submitting: false,
     status: null,
   });
-  const [open, setOpen] = useState(true);
 
   const handleServerResponse = (ok, msg, form) => {
     setServerState({
@@ -110,11 +116,6 @@ const Contact = () => {
       });
   };
 
-  // Modal close
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <>
       <Navbar />
@@ -124,6 +125,7 @@ const Contact = () => {
             <Typography variant="h5" className={classes.heading}>
               Get in touch
             </Typography>
+
             <form onSubmit={handleOnSubmit}>
               <InputField
                 fullWidth={true}
@@ -156,30 +158,28 @@ const Contact = () => {
                 fullWidth={true}
                 endIcon={<Send />}
                 className={classes.button}
-                // onClick={(e) => setOpen(true)}
+                onClick={handleOpen}
               >
                 Contact Me
               </Button>
 
               {/* popup window */}
-
-              {/* {serverState.status && (
-                <Modal open={open} onClose={handleClose}>
+              {serverState.status && (
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  className={classes.modal}
+                >
                   <div className={classes.paper}>
-                    <h1 className={!serverState.status.ok ? 'errorMsg' : ''}>
+                    <h1
+                      className={!serverState.status.ok ? 'errorMsg' : ''}
+                      style={{ color: 'tomato', textAlign: 'center' }}
+                    >
+                      {' '}
                       {serverState.status.msg}
                     </h1>
                   </div>
                 </Modal>
-              )} */}
-
-              {serverState.status && (
-                <h1
-                  className={!serverState.status.ok ? 'errorMsg' : ''}
-                  style={{ color: 'tomato', textAlign: 'center' }}
-                >
-                  {serverState.status.msg}
-                </h1>
               )}
             </form>
           </Box>
