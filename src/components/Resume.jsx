@@ -111,9 +111,9 @@ const useStyles = makeStyles((theme) => ({
 const resumes = [
   {
     id: 1,
-    year: '2020',
-    role: 'No Experience 😔',
-    companyName: '',
+    year: '2021',
+    role: 'IT Trainee Officer (Programmer)',
+    companyName: 'PAP International LTD.',
     description: '',
   },
 ];
