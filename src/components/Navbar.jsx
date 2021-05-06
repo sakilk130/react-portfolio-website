@@ -11,7 +11,6 @@ import {
   Typography,
   Box,
   ListItemIcon,
-  Button,
 } from '@material-ui/core';
 import { AssignmentInd, Home, Apps, ContactMail } from '@material-ui/icons';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
@@ -118,9 +117,16 @@ function Navbar() {
               <ClearAllIcon style={{ background: '#E74C3C' }} />
             </IconButton>
             <Typography variant="h5">
-              <Button href="/" style={{ color: 'white', fontSize: '1.2rem' }}>
+              <a
+                href="/"
+                style={{
+                  color: 'white',
+                  fontSize: '1.2rem',
+                  textDecoration: 'none',
+                }}
+              >
                 Sakil Khan
-              </Button>
+              </a>
             </Typography>
             <SliderOpen
               anchor="left"

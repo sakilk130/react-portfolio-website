@@ -112,9 +112,11 @@ const resumes = [
   {
     id: 1,
     year: '2021',
-    role: 'IT Trainee Officer (Programmer)',
-    companyName: 'PAP International LTD.',
-    description: '',
+    role: 'Software Engineer Trainee',
+    companyName: 'PAP International Ltd.',
+    companyUrl: 'http://papint.asia/',
+    description:
+      'PAP International is a Technology development and Business solution provider that covers all areas of the Industries.The company is now fully setup and operating in Bangladesh as an extension of the parent company in UK.',
   },
 ];
 
@@ -151,8 +153,15 @@ const Resume = () => {
                   align="center"
                   className={classes.body1}
                 >
-                  {resume.companyName}
+                  <a
+                    style={{ textDecoration: 'none', color: 'tomato' }}
+                    href={resume.companyUrl}
+                    target="_blank"
+                  >
+                    {resume.companyName}
+                  </a>
                 </Typography>
+
                 <Typography
                   variant="subtitle1"
                   align="center"
