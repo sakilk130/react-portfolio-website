@@ -112,7 +112,7 @@ const resumes = [
   {
     id: 1,
     year: '2021',
-    role: 'Software Engineer Trainee',
+    role: 'Software Engineer',
     companyName: 'PAP International Ltd.',
     companyUrl: 'http://papint.asia/',
     description:
