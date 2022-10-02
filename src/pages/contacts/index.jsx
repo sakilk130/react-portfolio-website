@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import Navbar from '../../components/Navbar';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import axios from 'axios';
-import Send from '@material-ui/icons/Send';
+import Grid from '@material-ui/core/Grid';
 import Modal from '@material-ui/core/Modal';
+import Typography from '@material-ui/core/Typography';
+import Send from '@material-ui/icons/Send';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { InputField, useStyles } from './styles/contacts';
 
 const Contact = () => {
@@ -53,75 +52,72 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <Box component="div" className={classes.contactContainer}>
-        <Grid container justify="center">
-          <Box component="form" className={classes.form}>
-            <Typography variant="h5" className={classes.heading}>
-              Get in touch
-            </Typography>
+    <Box component="div" className={classes.contactContainer}>
+      <Grid container justify="center">
+        <Box component="form" className={classes.form}>
+          <Typography variant="h5" className={classes.heading}>
+            Get in touch
+          </Typography>
 
-            <form onSubmit={handleOnSubmit}>
-              <InputField
-                fullWidth={true}
-                label="Name"
-                variant="outlined"
-                name="name"
-                inputProps={{ className: classes.input }}
-              />
-              <InputField
-                fullWidth={true}
-                label="Email"
-                variant="outlined"
-                name="email"
-                inputProps={{ className: classes.input }}
-                className={classes.field}
-              />
-              <InputField
-                fullWidth={true}
-                label="Message"
-                variant="outlined"
-                name="message"
-                multiline
-                rows={4}
-                inputProps={{ className: classes.input }}
-              />
+          <form onSubmit={handleOnSubmit}>
+            <InputField
+              fullWidth={true}
+              label="Name"
+              variant="outlined"
+              name="name"
+              inputProps={{ className: classes.input }}
+            />
+            <InputField
+              fullWidth={true}
+              label="Email"
+              variant="outlined"
+              name="email"
+              inputProps={{ className: classes.input }}
+              className={classes.field}
+            />
+            <InputField
+              fullWidth={true}
+              label="Message"
+              variant="outlined"
+              name="message"
+              multiline
+              rows={4}
+              inputProps={{ className: classes.input }}
+            />
 
-              <Button
-                type="submit"
-                variant="outlined"
-                fullWidth={true}
-                endIcon={<Send />}
-                className={classes.button}
-                onClick={handleOpen}
+            <Button
+              type="submit"
+              variant="outlined"
+              fullWidth={true}
+              endIcon={<Send />}
+              className={classes.button}
+              onClick={handleOpen}
+            >
+              Contact Me
+            </Button>
+
+            {/* popup window */}
+            {serverState.status && (
+              <Modal
+                open={open}
+                onClose={handleClose}
+                className={classes.modal}
               >
-                Contact Me
-              </Button>
-
-              {/* popup window */}
-              {serverState.status && (
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  className={classes.modal}
-                >
-                  <div className={classes.paper}>
-                    <h1
-                      className={!serverState.status.ok ? 'errorMsg' : ''}
-                      style={{ color: 'tomato', textAlign: 'center' }}
-                    >
-                      {' '}
-                      {serverState.status.msg}
-                    </h1>
-                  </div>
-                </Modal>
-              )}
-            </form>
-          </Box>
-        </Grid>
-      </Box>
-    </>
+                <div className={classes.paper}>
+                  <h1
+                    className={!serverState.status.ok ? 'errorMsg' : ''}
+                    style={{ color: 'tomato', textAlign: 'center' }}
+                  >
+                    {' '}
+                    {serverState.status.msg}
+                  </h1>
+                </div>
+              </Modal>
+            )}
+          </form>
+        </Box>
+      </Grid>
+    </Box>
   );
 };
 

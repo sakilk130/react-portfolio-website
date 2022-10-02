@@ -1,13 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-  Particles: {
-    position: 'fixed',
-    opacity: '0.3',
-  },
-});
+import { useStyles } from './styles/particles';
 
 const CustomParticles = () => {
   const classes = useStyles();

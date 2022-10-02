@@ -8,7 +8,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import React from 'react';
-import Navbar from '../../components/Navbar';
 import { useStyles } from './styles/skills';
 
 const skills = [
@@ -94,37 +93,34 @@ const skills = [
 function Skills() {
   const classes = useStyles();
   return (
-    <>
-      <Navbar />
-      <Box component="div" className={classes.mainContainer}>
-        <Typography variant="h4" align="center" className={classes.heading}>
-          MY SKILLS
-        </Typography>
-        <div className={classes.language}>
-          <Grid container justify="center">
-            {skills.map((skill, i) => (
-              <Grid item xs={12} sm={8} md={4} key={i}>
-                <Card className={classes.cardContainer}>
-                  <CardActionArea>
-                    <CardContent>
-                      <Typography variant="h5" gutterBottom>
-                        <span className={classes.languageView}>
-                          <Avatar
-                            src={skill.logo}
-                            style={{ marginRight: '10px' }}
-                          />
-                          {skill.title}
-                        </span>
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </div>
-      </Box>
-    </>
+    <Box component="div" className={classes.mainContainer}>
+      <Typography variant="h4" align="center" className={classes.heading}>
+        MY SKILLS
+      </Typography>
+      <div className={classes.language}>
+        <Grid container justify="center">
+          {skills.map((skill, i) => (
+            <Grid item xs={12} sm={8} md={4} key={i}>
+              <Card className={classes.cardContainer}>
+                <CardActionArea>
+                  <CardContent>
+                    <Typography variant="h5" gutterBottom>
+                      <span className={classes.languageView}>
+                        <Avatar
+                          src={skill.logo}
+                          style={{ marginRight: '10px' }}
+                        />
+                        {skill.title}
+                      </span>
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+    </Box>
   );
 }
 
