@@ -1,77 +1,13 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Navbar from '../../components/Navbar';
 import Box from '@material-ui/core/Box';
-import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import Send from '@material-ui/icons/Send';
 import Modal from '@material-ui/core/Modal';
-
-const useStyles = makeStyles((theme) => ({
-  contactContainer: {
-    height: '100vh',
-  },
-  heading: {
-    color: 'tomato',
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    marginBottom: '1rem',
-  },
-  form: {
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    position: 'absolute',
-  },
-  input: {
-    color: '#fff',
-  },
-  button: {
-    marginTop: '1rem',
-    color: 'tomato',
-    borderColor: 'tan',
-  },
-  field: {
-    margin: '1rem 0rem',
-  },
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
-
-const InputField = withStyles({
-  root: {
-    '& label.Mui-focused': {
-      color: 'tomato',
-    },
-    '& label': {
-      color: 'tan',
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'tan',
-      },
-      '&:hover fieldset': {
-        borderColor: 'tan',
-      },
-      '&.Mui-focused fieldset': {
-        color: '#fff',
-        borderColor: 'tan',
-      },
-    },
-  },
-})(TextField);
+import { InputField, useStyles } from './styles/contacts';
 
 const Contact = () => {
   const classes = useStyles();

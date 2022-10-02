@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { AssignmentInd, Home, Apps, ContactMail } from '@material-ui/icons';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
-import myImage from '../image/myImage.jpg';
+import myImage from '../image/myImage.jpeg';
 import { makeStyles } from '@material-ui/core/styles';
 import SliderOpen from '@material-ui/core/Drawer';
 import { Link } from 'react-router-dom';
