@@ -8,15 +8,16 @@ function HeroDetails() {
   return (
     <>
       <BottomNavigation className={classes.root} style={{ background: 'none' }}>
-        {heroInfo.contracts.map((contract) => (
-          <BottomNavigationAction
-            key={contract.id}
-            icon={<contract.icon />}
-            target="blank"
-            href={contract.link}
-            title={contract.username}
-          />
-        ))}
+        {heroInfo &&
+          heroInfo?.contacts?.map((contract) => (
+            <BottomNavigationAction
+              key={contract.id}
+              icon={<contract.icon />}
+              target="blank"
+              href={contract.link}
+              title={contract.username}
+            />
+          ))}
       </BottomNavigation>
     </>
   );

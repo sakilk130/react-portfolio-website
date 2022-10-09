@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn } from '@material-ui/icons/GitHub';
+import { GitHub, LinkedIn } from '@material-ui/icons';
 
 export const heroInfo = {
   name: 'Sakil Khan',
@@ -11,7 +11,7 @@ export const heroInfo = {
     'React Developer',
     'Node.js Developer',
   ],
-  contracts: [
+  contacts: [
     {
       id: 1,
       name: 'GitHub',
