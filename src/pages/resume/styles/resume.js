@@ -65,7 +65,7 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     maxWidth: '9.375rem',
     margin: '0 3rem 0 auto',
-    fontSize: '1.8rem',
+    fontSize: '1.2rem',
     color: '#fff',
     background: 'tomato',
     lineHeight: 1,
