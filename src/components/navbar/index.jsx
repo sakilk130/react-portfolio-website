@@ -1,131 +1,48 @@
 import {
   AppBar,
-  Avatar,
   Box,
-  Divider,
   Drawer,
   IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import {
-  Apps,
-  AssignmentInd,
-  Build,
-  ClearAll,
-  ContactMail,
-  Home,
-  School,
-} from '@material-ui/icons';
-import React, { useState } from 'react';
+import { ClearAll } from '@material-ui/icons';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { heroInfo } from '../../data/data';
 import Footer from '../footer';
+import SliderItems from '../slider-items';
 import { useStyles } from './styles/navbar';
 
-const menuItems = [
-  {
-    listIcon: <Home />,
-    listText: 'Home',
-    listPath: '/',
-  },
-  {
-    listIcon: <AssignmentInd />,
-    listText: 'Resume',
-    listPath: '/resume',
-  },
-  {
-    listIcon: <Apps />,
-    listText: 'Portfolio',
-    listPath: '/portfolio',
-  },
-  {
-    listIcon: <Build />,
-    listText: 'Skills',
-    listPath: '/skills',
-  },
-  {
-    listIcon: <School />,
-    listText: 'Education',
-    listPath: '/education',
-  },
-  {
-    listIcon: <ContactMail />,
-    listText: 'Contacts',
-    listPath: '/contacts',
-  },
-];
-
-function Navbar() {
+const Navbar = () => {
   const classes = useStyles();
-  const [slider, Setslider] = useState({
-    right: false,
-  });
+  const [slider, setSlider] = useState(true);
 
-  const toggleSlide = (toggler, open) => () => {
-    Setslider({ ...slider, [toggler]: open });
-  };
-  const sideList = (slider) => (
-    <Box
-      component="div"
-      className={classes.menuSlide}
-      onClick={toggleSlide(slider, false)}
-    >
-      <Avatar
-        className={classes.myImage}
-        src="/images/myImage.jpeg"
-        alt="Sakil Khan"
-      />
-      <Divider />
-      <List>
-        {menuItems.map((item, key) => (
-          <ListItem button key={key} component={Link} to={item.listPath}>
-            <ListItemIcon className={classes.listIcon}>
-              {item.listIcon}
-            </ListItemIcon>
-            <ListItemText className={classes.listText}>
-              {item.listText}
-            </ListItemText>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+  const toggleSlide = useCallback(() => {
+    setSlider((prevState) => !prevState);
+  }, []);
 
   return (
     <Box component="nav">
-      <AppBar position="static" style={{ background: '#222' }}>
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-          <IconButton onClick={toggleSlide('right', true)}>
-            <ClearAll style={{ background: '#E74C3C' }} />
+          <IconButton onClick={toggleSlide}>
+            <ClearAll className={classes.clearAll} />
           </IconButton>
           <Typography variant="h5">
-            <a
-              href="/"
-              style={{
-                color: 'white',
-                fontSize: '1.2rem',
-                textDecoration: 'none',
-              }}
-            >
-              Sakil Khan
-            </a>
+            <Link to="/" className={classes.title}>
+              {heroInfo.name}
+            </Link>
           </Typography>
-          <Drawer
-            anchor="left"
-            open={slider.right}
-            onClose={toggleSlide('right', false)}
-          >
-            {sideList('right')}
+          <Drawer anchor="left" open={slider} onClose={toggleSlide}>
+            <SliderItems toggleSlide={toggleSlide} />
             <Footer />
           </Drawer>
         </Toolbar>
       </AppBar>
     </Box>
   );
-}
+};
 
 export default Navbar;

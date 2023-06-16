@@ -1,26 +1,23 @@
-import React from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import { heroInfo } from '../../data/data';
+import React from 'react';
+
 import { useStyles } from './styles/hero-details';
 
-function HeroDetails() {
+const HeroDetails = ({ contacts }) => {
   const classes = useStyles();
   return (
-    <>
-      <BottomNavigation className={classes.root} style={{ background: 'none' }}>
-        {heroInfo &&
-          heroInfo?.contacts?.map((contract) => (
-            <BottomNavigationAction
-              key={contract.id}
-              icon={<contract.icon />}
-              target="blank"
-              href={contract.link}
-              title={contract.username}
-            />
-          ))}
-      </BottomNavigation>
-    </>
+    <BottomNavigation className={classes.root}>
+      {contacts.map((contract) => (
+        <BottomNavigationAction
+          key={contract.id}
+          icon={<contract.icon />}
+          target="blank"
+          href={contract.link}
+          title={contract.username}
+        />
+      ))}
+    </BottomNavigation>
   );
-}
+};
 
 export default HeroDetails;
