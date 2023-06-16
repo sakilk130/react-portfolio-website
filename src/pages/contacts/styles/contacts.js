@@ -23,6 +23,11 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: '1rem',
     color: 'tomato',
     borderColor: 'tan',
+    '&:disabled': {
+      color: 'grey',
+      borderColor: 'grey',
+      cursor: 'not-allowed',
+    },
   },
   field: {
     margin: '1rem 0rem',

@@ -1,64 +1,45 @@
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import Modal from '@material-ui/core/Modal';
-import Typography from '@material-ui/core/Typography';
-import Send from '@material-ui/icons/Send';
+import { Box, Button, Grid, Typography } from '@material-ui/core';
+import { Send } from '@material-ui/icons';
 import axios from 'axios';
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { Oval } from 'react-loader-spinner';
+
 import { InputField, useStyles } from './styles/contacts';
 
 const Contact = () => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = useState(false);
+  const url = 'https://formspree.io/f/xgepkqol';
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const [serverState, setServerState] = useState({
-    submitting: false,
-    status: null,
-  });
-
-  const handleServerResponse = (ok, msg, form) => {
-    setServerState({
-      submitting: false,
-      status: { ok, msg },
-    });
-    if (ok) {
-      form.reset();
-    }
-  };
   const handleOnSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    setServerState({ submitting: true });
+    setLoading(true);
     axios({
       method: 'post',
-      url: 'https://formspree.io/f/xgepkqol',
+      url,
       data: new FormData(form),
     })
-      .then((r) => {
-        handleServerResponse(true, 'Thanks!', form);
+      .then((_) => {
+        toast.success('Message sent successfully');
+        form.reset();
       })
-      .catch((r) => {
-        handleServerResponse(false, r.response.data.error, form);
+      .catch((error) => {
+        toast.error('Message failed to send');
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
   return (
     <Box component="div" className={classes.contactContainer}>
       <Grid container justify="center">
-        <Box component="form" className={classes.form}>
+        <Box component="div" className={classes.form}>
           <Typography variant="h5" className={classes.heading}>
             Get in touch
           </Typography>
-
           <form onSubmit={handleOnSubmit}>
             <InputField
               fullWidth={true}
@@ -84,36 +65,29 @@ const Contact = () => {
               rows={4}
               inputProps={{ className: classes.input }}
             />
-
             <Button
               type="submit"
               variant="outlined"
               fullWidth={true}
-              endIcon={<Send />}
+              endIcon={!loading && <Send />}
               className={classes.button}
-              onClick={handleOpen}
+              disabled={loading}
             >
-              Contact Me
+              {loading ? (
+                <Oval
+                  height={25}
+                  width={25}
+                  color="tomato"
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="#250220"
+                  strokeWidth={2}
+                  strokeWidthSecondary={2}
+                />
+              ) : (
+                'Contact Me'
+              )}
             </Button>
-
-            {/* popup window */}
-            {serverState.status && (
-              <Modal
-                open={open}
-                onClose={handleClose}
-                className={classes.modal}
-              >
-                <div className={classes.paper}>
-                  <h1
-                    className={!serverState.status.ok ? 'errorMsg' : ''}
-                    style={{ color: 'tomato', textAlign: 'center' }}
-                  >
-                    {' '}
-                    {serverState.status.msg}
-                  </h1>
-                </div>
-              </Modal>
-            )}
           </form>
         </Box>
       </Grid>
