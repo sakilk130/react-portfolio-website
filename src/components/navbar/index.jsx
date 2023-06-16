@@ -17,7 +17,7 @@ import { useStyles } from './styles/navbar';
 
 const Navbar = () => {
   const classes = useStyles();
-  const [slider, setSlider] = useState(true);
+  const [slider, setSlider] = useState(false);
 
   const toggleSlide = useCallback(() => {
     setSlider((prevState) => !prevState);
