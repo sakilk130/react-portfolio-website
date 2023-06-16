@@ -1,28 +1,32 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Loading from './components/loading';
 import Navbar from './components/navbar';
-import Contacts from './pages/contacts';
-import Education from './pages/education';
-import Home from './pages/home/index';
-import Portfolio from './pages/portfolio';
-import Resume from './pages/resume';
-import Skills from './pages/skills';
 
-function App() {
+const Contacts = React.lazy(() => import('./pages/contacts'));
+const Education = React.lazy(() => import('./pages/education'));
+const Home = React.lazy(() => import('./pages/home/index'));
+const Portfolio = React.lazy(() => import('./pages/portfolio'));
+const Resume = React.lazy(() => import('./pages/resume'));
+const Skills = React.lazy(() => import('./pages/skills'));
+
+const App = () => {
   return (
     <>
       <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/resume" component={Resume} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/skills" component={Skills} />
-        <Route path="/education" component={Education} />
-        <Route path="/contacts" component={Contacts} />
-      </Switch>
+      <React.Suspense fallback={<Loading />}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/skills" component={Skills} />
+          <Route path="/education" component={Education} />
+          <Route path="/contacts" component={Contacts} />
+        </Switch>
+      </React.Suspense>
     </>
   );
-}
+};
 
 export default App;

@@ -1,6 +1,7 @@
 import { Avatar, Box, Grid, Typography } from '@material-ui/core';
 import React from 'react';
 import Typed from 'react-typed';
+
 import { heroInfo } from '../../data/data';
 import HeroDetails from '../hero-details';
 import { useStyles } from './styles/hero';
@@ -23,7 +24,7 @@ const Hero = () => {
       <br />
       <Typography className={classes.subtitle} variant="h5">
         <Typed strings={heroInfo.title} typeSpeed={70} backSpeed={60} loop />
-        <HeroDetails />
+        <HeroDetails contacts={heroInfo.contacts} />
       </Typography>
     </Box>
   );

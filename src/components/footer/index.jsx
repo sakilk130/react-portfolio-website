@@ -1,23 +1,19 @@
-import Typography from '@material-ui/core/Typography';
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
+import { heroInfo } from '../../data/data';
 import { useStyles } from './styles/footer';
 
-function Footer() {
+const Footer = () => {
   const classes = useStyles();
   return (
-    <div width="auto" style={{ background: '#222' }}>
-      <Typography className={classes.root} style={{ color: 'tomato' }}>
-        Made with <span> </span>
-        <img
-          src="https://twemoji.maxcdn.com/2/72x72/2764.png"
-          alt="love"
-          className={classes.love}
-        />
-        <span> </span>
-        by Sakil Khan
-      </Typography>
-    </div>
+    <Typography className={classes.root}>
+      Made with <span> </span>
+      <FavoriteIcon />
+      by {heroInfo.name}
+    </Typography>
   );
-}
+};
 
 export default Footer;

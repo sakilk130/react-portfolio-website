@@ -12,6 +12,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-icons": "^3.11.0",
+    "react-loader-spinner": "^5.3.4",
     "react-modal": "^3.11.2",
     "react-particles-js": "^3.3.0",
     "react-router-dom": "^5.2.0",

@@ -5,7 +5,6 @@ export const heroInfo = {
   image: '/images/myImage.jpeg',
   title: [
     'Full Stack Developer',
-    'JavaScript Developer',
     'MERN Stack Developer',
     'Software Engineer',
     'React Developer',

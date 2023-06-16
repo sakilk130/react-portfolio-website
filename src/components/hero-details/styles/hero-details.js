@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles({
   root: {
+    background: 'none',
     '& .MuiBottomNavigationAction-root': {
       MinWidth: 0,
       maxWidth: 50,
