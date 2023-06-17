@@ -27,7 +27,7 @@ const Navbar = () => {
     <Box component="nav">
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-          <IconButton onClick={toggleSlide}>
+          <IconButton onClick={toggleSlide} aria-label="Menu">
             <ClearAll className={classes.clearAll} />
           </IconButton>
           <Typography variant="h5">
