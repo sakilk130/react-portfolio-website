@@ -18,8 +18,8 @@ export const useStyles = makeStyles({
       '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
 
     '&:hover': {
-      msTransform: 'scale(1.2)',
-      webkitTransform: 'scale(1.2)',
+      msTransform: 'scale(1.1)',
+      webkitTransform: 'scale(1.1)',
       transform: 'scale(1.05)',
       backfaceVisibility: 'hidden',
       // transform: 'translateZ(0)',
@@ -42,5 +42,9 @@ export const useStyles = makeStyles({
   languageView: {
     display: 'flex',
     color: 'tomato',
+    alignItems: 'center',
+  },
+  logo: {
+    marginRight: '10px',
   },
 });
