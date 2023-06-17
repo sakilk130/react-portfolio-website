@@ -1,6 +1,6 @@
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import { Box, Typography } from '@material-ui/core';
 import React from 'react';
+
 import { useStyles } from './styles/resume';
 import { resumes } from '../../data/data';
 
@@ -13,14 +13,13 @@ const Resume = () => {
       </Typography>
       <Box component="div" className={classes.timeLine}>
         {resumes.map((resume) => (
-          <>
+          <React.Fragment key={resume.id}>
             <Typography
               variant="h2"
               className={`${classes.timeLineYear} ${classes.timeLineItem}`}
             >
               {resume.year}
             </Typography>
-
             <Box component="div" className={classes.timeLineItem}>
               <Typography
                 variant="h5"
@@ -38,10 +37,7 @@ const Resume = () => {
                   href={resume.companyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    textDecoration: 'none',
-                    color: 'tomato',
-                  }}
+                  className={classes.companyUrl}
                 >
                   {resume.companyName}
                 </a>
@@ -54,7 +50,7 @@ const Resume = () => {
                 {resume.description}
               </Typography>
             </Box>
-          </>
+          </React.Fragment>
         ))}
       </Box>
     </Box>

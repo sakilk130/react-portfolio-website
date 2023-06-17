@@ -13,7 +13,7 @@ const Education = () => {
       </Typography>
       <Box component="div" className={classes.timeLine}>
         {educations.map((education) => (
-          <div key={education.id}>
+          <React.Fragment key={education.id}>
             <Typography
               variant="h2"
               className={`${classes.timeLineYear} ${classes.timeLineItem}`}
@@ -43,7 +43,7 @@ const Education = () => {
                 {education.description}
               </Typography>
             </Box>
-          </div>
+          </React.Fragment>
         ))}
       </Box>
     </Box>
