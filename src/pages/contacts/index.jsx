@@ -1,7 +1,7 @@
 import { Box, Button, Grid, Typography } from '@material-ui/core';
 import { Send } from '@material-ui/icons';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Oval } from 'react-loader-spinner';
 
@@ -12,7 +12,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const url = 'https://formspree.io/f/xgepkqol';
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = useCallback((e) => {
     e.preventDefault();
     const form = e.target;
     setLoading(true);
@@ -31,7 +31,7 @@ const Contact = () => {
       .finally(() => {
         setLoading(false);
       });
-  };
+  }, []);
 
   return (
     <Box component="div" className={classes.contactContainer}>
@@ -47,6 +47,7 @@ const Contact = () => {
               variant="outlined"
               name="name"
               inputProps={{ className: classes.input }}
+              required
             />
             <InputField
               fullWidth={true}
@@ -55,6 +56,7 @@ const Contact = () => {
               name="email"
               inputProps={{ className: classes.input }}
               className={classes.field}
+              required
             />
             <InputField
               fullWidth={true}
@@ -64,6 +66,7 @@ const Contact = () => {
               multiline
               rows={4}
               inputProps={{ className: classes.input }}
+              required
             />
             <Button
               type="submit"

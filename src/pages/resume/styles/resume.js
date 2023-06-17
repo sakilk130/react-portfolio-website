@@ -101,4 +101,8 @@ export const useStyles = makeStyles((theme) => ({
   subtitle1: {
     color: 'tan',
   },
+  companyUrl: {
+    textDecoration: 'none',
+    color: 'tomato',
+  },
 }));

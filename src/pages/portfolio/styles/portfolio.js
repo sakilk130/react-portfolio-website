@@ -12,16 +12,10 @@ export const useStyles = makeStyles(() => ({
   cardContainer: {
     maxWidth: 345,
     margin: '3rem auto',
+    border: 'none',
     '&:hover': {
-      msTransform: 'scale(1.2)',
-      webkitTransform: 'scale(1.2)',
-      transform: 'scale(1.05)',
-      backfaceVisibility: 'hidden',
-      // transform: 'translateZ(0)',
-      transitionProperty: 'transform',
-      transitionDuration: '0.25s',
-      transitionTimingFunction: 'ease-out',
-      transitionDelay: '0s',
+      boxShadow: '0 0 11px rgba(33,33,33,.2)',
+      border: '1px solid #E26347',
     },
   },
 
@@ -30,8 +24,12 @@ export const useStyles = makeStyles(() => ({
   },
   projectDescription: {
     color: 'rgb(132 29 2 / 1)',
+    textAlign: 'justify',
   },
   button: {
     backgroundColor: 'rgb(218 218 218)',
+  },
+  chip: {
+    margin: '0.5rem 0.5rem 0 0',
   },
 }));

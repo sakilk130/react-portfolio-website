@@ -7,11 +7,13 @@ import * as serviceWorker from './serviceWorker';
 import ToasterProvider from './providers/ToasterProvider';
 
 ReactDOM.render(
-  <Router>
-    <ToasterProvider />
-    <CssBaseline />
-    <App />
-  </Router>,
+  <React.StrictMode>
+    <Router>
+      <ToasterProvider />
+      <CssBaseline />
+      <App />
+    </Router>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 serviceWorker.register();
