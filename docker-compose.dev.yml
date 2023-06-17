@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: react-portfolio
+    image: react-portfolio
+    build:
+      context: .
+      target: development
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3000:3000

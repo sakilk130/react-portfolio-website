@@ -22,7 +22,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write .",
+    "dev:docker:up": "docker-compose -f docker-compose.dev.yml up",
+    "dev:docker:build": "docker-compose -f docker-compose.dev.yml build",
+    "dev:docker:down": "docker-compose -f docker-compose.dev.yml down",
+    "prod:docker:up": "docker-compose -f docker-compose.prod.yml up",
+    "prod:docker:build": "docker-compose -f docker-compose.prod.yml build",
+    "prod:docker:down": "docker-compose -f docker-compose.prod.yml down"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
   }
 }

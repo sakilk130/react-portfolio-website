@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: react-portfolio-prod
+    image: react-portfolio-prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - 80:80
