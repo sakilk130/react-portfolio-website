@@ -72,3 +72,40 @@ export const educations = [
     description: '',
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    image: '/images/todoAppReactWithFirebase.png',
+    name: 'Todo App',
+    description: `This is a simple Todo app. You can store your todo list. Also you can Add, Edit,\
+     Delete and View. As front end I used JavaScript library called 'React'. For designing I used\
+     'Material-UI'. And Realtime Database or Cloud Firestore I used 'Firebase'. That's why the app is \
+     so faster and robust.`,
+    tools: ['javascript', 'react', 'firebase'],
+    live: 'https://react-firebase-todo-app-d37d1.web.app/',
+    source: 'https://github.com/sakilk130/react-firebase-todo-app',
+  },
+  {
+    id: 2,
+    image: '/images/reactWeatherApp.png',
+    name: 'Weather App',
+    description: `This is a Weather app. Where you can search a city and see current weather temperature, \
+    wind speed etc. As front end I used JavaScript library called 'React'. I used 'OpenWeather' APIs For request \
+    data and  display data.`,
+    tools: ['javascript', 'react'],
+    live: 'https://react-weather-app-v1.netlify.app/',
+    source: 'https://github.com/sakilk130/react-weather-app',
+  },
+  {
+    id: 3,
+    image: '/images/portfolioUsingReact.png',
+    name: 'My Portfolio Website',
+    description: `This is my Portfolio Website. Also this is a part of projects. Where people can see some information \
+    about me. There are 6 pages like Home, Resume, Portfolio, Contacts, Skills and Educations. For this project i \
+    used 'React' for front end and 'Material-UI'.`,
+    tools: ['javascript', 'react'],
+    live: 'https://sakilkhan.netlify.app/',
+    source: 'https://github.com/sakilk130/react-portfolio-website',
+  },
+];

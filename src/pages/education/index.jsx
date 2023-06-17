@@ -1,5 +1,6 @@
 import { Box, Typography } from '@material-ui/core';
 import React from 'react';
+
 import { educations } from '../../data/data';
 import { useStyles } from './styles/education';
 
@@ -12,14 +13,13 @@ const Education = () => {
       </Typography>
       <Box component="div" className={classes.timeLine}>
         {educations.map((education) => (
-          <>
+          <div key={education.id}>
             <Typography
               variant="h2"
               className={`${classes.timeLineYear} ${classes.timeLineItem}`}
             >
               {education.year}
             </Typography>
-
             <Box component="div" className={classes.timeLineItem}>
               <Typography
                 variant="h5"
@@ -43,7 +43,7 @@ const Education = () => {
                 {education.description}
               </Typography>
             </Box>
-          </>
+          </div>
         ))}
       </Box>
     </Box>
