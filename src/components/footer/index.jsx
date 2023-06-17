@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <Typography className={classes.root}>
       Made with <span> </span>
-      <FavoriteIcon />
+      <FavoriteIcon data-testid="favorite-icon" />
       by {heroInfo.name}
     </Typography>
   );
