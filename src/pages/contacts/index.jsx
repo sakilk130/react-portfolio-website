@@ -110,7 +110,6 @@ const Contact = () => {
     axios
       .get('https://api.bigdatacloud.net/data/client-info')
       .then((data) => {
-        console.log(data);
         setClientInfo((prev) => ({
           ...prev,
           ipinfo: data?.data,
