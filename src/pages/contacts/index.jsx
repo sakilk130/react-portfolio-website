@@ -110,7 +110,6 @@ const Contact = () => {
     axios
       .post('https://api2.ip8.com/ip/info')
       .then((data) => {
-        console.log(data);
         setClientInfo((prev) => ({
           ...prev,
           ipinfo: data,
