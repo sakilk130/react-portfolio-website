@@ -108,11 +108,12 @@ const Contact = () => {
     }));
 
     axios
-      .get('https://api.bigdatacloud.net/data/client-info')
+      .post('https://api2.ip8.com/ip/info')
       .then((data) => {
+        console.log(data);
         setClientInfo((prev) => ({
           ...prev,
-          ipinfo: data?.data,
+          ipinfo: data,
         }));
       })
       .catch((error) => {
