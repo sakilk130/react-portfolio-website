@@ -1,7 +1,7 @@
 <h1 align="center">React Portfolio Website</h1>
 
 <p align="center">
-  <img src="https://github.com/Arshdeep-13/react-portfolio-website/assets/108752646/41368c84-9646-4cdc-b962-2ae6108835f5" alt="Preview of React Portfolio Website">
+  <img src="./public/images/sample.png" alt="Preview of React Portfolio Website">
 </p>
 
 <p align="center">
