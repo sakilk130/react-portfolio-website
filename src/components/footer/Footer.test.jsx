@@ -1,24 +1,30 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Footer from '.';
+import { heroInfo } from '../../data/data';
 
-describe('Footer component', () => {
-  it('renders the footer text correctly', () => {
-    const { getByText } = render(<Footer />);
-    const footerText = getByText(/Made with/i);
-    expect(footerText).toBeInTheDocument();
-  });
+jest.mock('./styles/footer', () => ({
+  useStyles: () => ({
+    root: 'footer-root',
+  }),
+}));
 
-  it('renders the favorite icon', () => {
-    const { getByTestId } = render(<Footer />);
-    const favoriteIcon = getByTestId('favorite-icon');
-    expect(favoriteIcon).toBeInTheDocument();
-  });
+describe('Footer Component', () => {
+  it('should render the correct content', () => {
+    render(<Footer />);
 
-  it('renders the hero name correctly', () => {
-    const { getByText } = render(<Footer />);
-    const heroName = getByText(/Sakil Khan/i);
-    expect(heroName).toBeInTheDocument();
+    const icon = screen.getByTestId('favorite-icon');
+    expect(icon).toBeInTheDocument();
+
+    const nameElement = screen.getByText(
+      new RegExp(`by ${heroInfo.name}`, 'i'),
+    );
+    expect(nameElement).toBeInTheDocument();
+
+    const footerElement = screen.getByText(
+      new RegExp(`by ${heroInfo.name}`, 'i'),
+    );
+    expect(footerElement).toHaveClass('footer-root');
   });
 });
