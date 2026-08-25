@@ -6,9 +6,10 @@ import { useStyles } from './styles/hero-details';
 const HeroDetails = ({ contacts }) => {
   const classes = useStyles();
   return (
-    <BottomNavigation className={classes.root}>
+    <BottomNavigation className={classes.root} data-testid="hero-details">
       {contacts.map((contract) => (
         <BottomNavigationAction
+          data-testid="hero-details-action"
           key={contract.id}
           icon={<contract.icon />}
           target="blank"

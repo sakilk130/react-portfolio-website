@@ -31,7 +31,7 @@ export const heroInfo = {
 export const resumes = [
   {
     id: 1,
-    year: 'July 2023 - Present',
+    year: 'July 2023 - March 2026',
     role: 'Software Specialist',
     companyName: 'SSL Wireless',
     companyUrl: 'https://www.sslwireless.com/',
@@ -61,20 +61,27 @@ export const resumes = [
 export const educations = [
   {
     id: 1,
+    year: 'March 2026 - Present',
+    universityName: 'University of Graz & TU Graz, Austria',
+    department: "Joint Master's Degree in Data Science",
+    description: '',
+  },
+  {
+    id: 2,
     year: 'January 2017 - August 2021',
     universityName: 'American International University-Bangladesh (AIUB)',
     department: 'Bachelor of Science in Computer Science & Engineering',
     description: '',
   },
   {
-    id: 2,
+    id: 3,
     year: 'April 2014 - December 2016',
     universityName: 'Shahmukhdum College, Rajshahi',
     department: 'Higher Secondary School Certificate',
     description: '',
   },
   {
-    id: 3,
+    id: 4,
     year: 'January 2009 - December 2013',
     universityName: 'Asian School & College, Nachole',
     department: 'Secondary School Certificate',
