@@ -3,13 +3,7 @@ import { GitHub, LinkedIn } from '@material-ui/icons';
 export const heroInfo = {
   name: 'Sakil Khan',
   image: '/images/myImage.jpeg',
-  title: [
-    'Full Stack Developer',
-    'MERN Stack Developer',
-    'Software Engineer',
-    'React Developer',
-    'Node.js Developer',
-  ],
+  title: ['Software Engineer', 'Full-Stack Engineer'],
   contacts: [
     {
       id: 1,
@@ -31,8 +25,8 @@ export const heroInfo = {
 export const resumes = [
   {
     id: 1,
-    year: 'July 2023 - March 2026',
-    role: 'Software Specialist',
+    year: 'Jan 2026 - March 2026',
+    role: 'Senior Software Engineer',
     companyName: 'SSL Wireless',
     companyUrl: 'https://www.sslwireless.com/',
     description:
@@ -40,6 +34,15 @@ export const resumes = [
   },
   {
     id: 2,
+    year: 'July 2023 - Dec 2025',
+    role: 'Software Engineer',
+    companyName: 'SSL Wireless',
+    companyUrl: 'https://www.sslwireless.com/',
+    description:
+      'SSL Wireless is recognized for its rapid development and efficient project execution by working with industry-standard technologies. SSL Wireless mounts on its decade long industry experience, superior technical skills and highest quality of support services to provide scalable IT solutions as a leading Software development and services company. It has deep infiltration in the Value-Added Services, Banking, Corporate, and FinTech industry of Bangladesh.',
+  },
+  {
+    id: 3,
     year: 'March 2022 - June 2023',
     role: 'Software Engineer',
     companyName: 'Sheba Technologies Ltd.',
@@ -48,8 +51,8 @@ export const resumes = [
       'Sheba Technologies Limited (STL) is part of the Sheba Group conglomerate which has been in Tech business for almost quarter of a century. STL is fully committed to bring world class technologically advanced Business Process Automation by delivering architecturally superior Software solution, Off-the-Shelf customizable Software, Artificial Intelligence and Machine Learning to our esteemed clients who are also our long-term strategic partners.',
   },
   {
-    id: 3,
-    year: 'January 2021 - February 2022',
+    id: 4,
+    year: 'Jan 2021 - Feb 2022',
     role: 'Software Engineer',
     companyName: 'PAP International Ltd.',
     companyUrl: 'http://papint.asia/',
